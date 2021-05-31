@@ -6,6 +6,7 @@ ion-app.app-root core-progress-bar {
     display: block;
     @extend .clearfix;
 
+
     .core-progress-text {
         @include margin(null, null, null, 10px);
         line-height: 40px;
@@ -23,7 +24,6 @@ ion-app.app-root core-progress-bar {
         -webkit-appearance: none;
         appearance: none;
         height: $core-progress-bar-height;
-        margin: 16px 0;
         padding: 0;
         display: block;
         width: 100%;

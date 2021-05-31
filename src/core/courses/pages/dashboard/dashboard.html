@@ -1,10 +1,6 @@
-<ion-header>
+<ion-header class="header-left">
     <ion-navbar core-back-button>
-        <ion-title>
-            <core-format-text [text]="siteName" contextLevel="system" [contextInstanceId]="0"></core-format-text>
-            <img src="assets/img/login_logo.png" class="core-header-logo" [alt]="siteName">
-        </ion-title>
-
+        <img src="assets/icon/icon.png" margin-horizontal="16px" height="36px" width="36px" class="core-header-logo">
         <ion-buttons end>
             <button *ngIf="searchEnabled" ion-button icon-only (click)="openSearch()" [attr.aria-label]="'core.courses.searchcourses' | translate">
                 <ion-icon name="search"></ion-icon>

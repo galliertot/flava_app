@@ -63,6 +63,10 @@ export class CoreLoginSitesPage {
                 return site;
             });
 
+            if (this.sites.length != 0) {
+                this.login(this.sites[0].id);
+            }
+
             this.showDelete = false;
         }).catch(() => {
             // Shouldn't happen.
@@ -118,6 +122,7 @@ export class CoreLoginSitesPage {
      */
     login(siteId: string): void {
         const modal = this.domUtils.showModalLoading();
+        this.logger.error('Site :' + siteId);
 
         this.sitesProvider.loadSite(siteId).then((loggedIn) => {
             if (loggedIn) {

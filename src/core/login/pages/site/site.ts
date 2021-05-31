@@ -225,52 +225,24 @@ export class CoreLoginSitePage {
             return;
         }
 
-        const modal = this.domUtils.showModalLoading(),
-            siteData = this.sitesProvider.getDemoSiteData(url);
+        const modal = this.domUtils.showModalLoading();
+        this.sitesProvider.checkSite(url)
+            .catch((error) => {
+                // Attempt guessing the domain if the initial check failed
+                const domain = CoreUrl.guessMoodleDomain(url);
 
-        if (siteData) {
-            // It's a demo site.
-            this.sitesProvider.getUserToken(siteData.url, siteData.username, siteData.password).then((data) => {
-                return this.sitesProvider.newSite(data.siteUrl, data.token, data.privateToken).then(() => {
-
-                    this.domUtils.triggerFormSubmittedEvent(this.formElement, true);
-
-                    return this.loginHelper.goToSiteInitialPage();
-                }, (error) => {
-                    this.loginHelper.treatUserTokenError(siteData.url, error, siteData.username, siteData.password);
-                    if (error.loggedout) {
-                        this.navCtrl.setRoot('CoreLoginSitesPage');
-                    }
-                });
-            }, (error) => {
-                this.loginHelper.treatUserTokenError(siteData.url, error, siteData.username, siteData.password);
-                if (error.loggedout) {
-                    this.navCtrl.setRoot('CoreLoginSitesPage');
+                if (domain && domain != url) {
+                    return this.sitesProvider.checkSite(domain).catch((secondError) => {
+                        // Try to use the first error.
+                        return Promise.reject(error || secondError);
+                    });
                 }
-            }).finally(() => {
-                modal.dismiss();
-            });
 
-        } else {
-            // Not a demo site.
-            this.sitesProvider.checkSite(url)
-                .catch((error) => {
-                    // Attempt guessing the domain if the initial check failed
-                    const domain = CoreUrl.guessMoodleDomain(url);
-
-                    if (domain && domain != url) {
-                        return this.sitesProvider.checkSite(domain).catch((secondError) => {
-                            // Try to use the first error.
-                            return Promise.reject(error || secondError);
-                        });
-                    }
-
-                    return Promise.reject(error);
-                })
-                .then((result) => this.login(result, foundSite))
-                .catch((error) => this.showLoginIssue(url, error))
-                .finally(() => modal.dismiss());
-        }
+                return Promise.reject(error);
+            })
+            .then((result) => this.login(result, foundSite))
+            .catch((error) => this.showLoginIssue(url, error))
+            .finally(() => modal.dismiss());
     }
 
     /**
@@ -375,19 +347,6 @@ export class CoreLoginSitePage {
     }
 
     /**
-     * Get the demo data for a certain "name" if it is a demo site.
-     *
-     * @param name Name of the site to check.
-     * @return Site data if it's a demo site, undefined otherwise.
-     */
-    getDemoSiteData(name: string): any {
-        const demoSites = CoreConfigConstants.demo_sites;
-        if (typeof demoSites != 'undefined' && typeof demoSites[name] != 'undefined') {
-            return demoSites[name];
-        }
-    }
-
-    /**
      * Process login to a site.
      *
      * @param response Response obtained from the site check request.
@@ -430,15 +389,7 @@ export class CoreLoginSitePage {
     protected moodleUrlValidator(): ValidatorFn {
         return (control: AbstractControl): {[key: string]: any} | null => {
             const value = control.value.trim();
-            let valid = value.length >= 3 && CoreUrl.isValidMoodleUrl(value);
-
-            if (!valid) {
-                const demo = !!this.getDemoSiteData(value);
-
-                if (demo) {
-                    valid = true;
-                }
-            }
+            const valid = value.length >= 3 && CoreUrl.isValidMoodleUrl(value);
 
             return valid ? null : {siteUrl: {value: control.value}};
         };

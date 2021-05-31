@@ -1,9 +1,4 @@
-<ion-header>
-    <ion-navbar core-back-button>
-        <ion-title>{{ 'core.login.reconnect' | translate }}</ion-title>
-    </ion-navbar>
-</ion-header>
-<ion-content padding>
+<ion-content padding class="gradient-flava">
     <div *ngIf="site" text-wrap text-center margin-bottom [ngClass]="{'item-avatar-center': showSiteAvatar}">
         <ng-container *ngIf="showSiteAvatar">
             <ion-avatar>
@@ -14,12 +9,10 @@
 
         <div class="core-login-site-logo" *ngIf="!showSiteAvatar">
             <!-- Show site logo or a default image. -->
-            <img *ngIf="logoUrl" [src]="logoUrl" role="presentation" onError="this.src='assets/img/login_logo.png'">
-            <img *ngIf="!logoUrl" src="assets/img/login_logo.png" role="presentation">
+            <img src="assets/icon/icon.png" role="presentation">
         </div>
 
-        <h3 *ngIf="siteName" padding class="core-sitename"><core-format-text [text]="siteName" [filter]="false"></core-format-text></h3>
-        <p class="core-siteurl">{{siteUrl}}</p>
+        <h2 margin-horizontal="16px">Bienvenue sur votre plateforme de formation !</h2>
 
         <p *ngIf="!isLoggedOut" class="core-login-reconnect-warning">
             <ion-icon padding name="alert"></ion-icon> {{ 'core.login.reconnectdescription' | translate }}
@@ -34,16 +27,7 @@
                 <ion-input class="core-ioninput-password" name="password" type="password" placeholder="{{ 'core.login.password' | translate }}" formControlName="password" [clearOnEdit]="false" autocomplete="current-password"></ion-input>
             </core-show-password>
         </ion-item>
-        <ion-grid padding>
-            <ion-row>
-                <ion-col>
-                    <a ion-button block color="light" (click)="cancel($event)">{{ 'core.login.cancel' | translate }}</a>
-                </ion-col>
-                <ion-col>
-                    <button ion-button block [disabled]="!credForm.valid">{{ 'core.login.loginbutton' | translate }}</button>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
+        <button ion-button block>{{ 'core.login.loginbutton' | translate }}</button>
     </form>
 
     <!-- Forgotten password button. -->

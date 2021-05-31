@@ -10,6 +10,25 @@ ion-app.app-root page-core-login-reconnect {
         margin-bottom: 20px;
     }
 
+    ion-item, .item-inner {
+        border-radius: 16px !important;
+    }
+
+    h2 {
+        color: $blue;
+    }
+
+    button {
+        width: 150px;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+
+    input, ion-item p {
+        padding-left: 12px !important;
+    }
+
+
     ion-col {
         @include padding-horizontal(10px !important, 0);
         &:first-child {
@@ -23,5 +42,12 @@ ion-app.app-root page-core-login-reconnect {
         @include darkmode() {
             background-color: $core-dark-login-reconnect-warning;
         }
+    }
+}
+
+.gradient-flava {
+    .scroll-content {
+        background: rgb(255,215,83) !important;
+        background: linear-gradient(180deg, rgba(255,215,83,1) 50%, rgba(248,178,41,1) 100%) !important;
     }
 }

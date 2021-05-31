@@ -115,3 +115,40 @@
   font-weight: 700;
   src: local("Noto Sans BoldItalic"), local("NotoSans-BoldItalic"), url("#{$font-path}/noto/NotoSans-BoldItalic.woff") format("woff");
 }
+
+// Flava
+
+@font-face {
+  font-family: "Fira";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Fira Light"), local("FiraSans-Light"), url("#{$font-path}/fira/FiraSans-Light.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Fira";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Fira Regular"), local("FiraSans-Regular"), url("#{$font-path}/fira/FiraSans-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Fira";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Fira Medium"), local("FiraSans-Medium"), url("#{$font-path}/fira/FiraSans-Medium.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Fira";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Fira Bold"), local("FiraSans-Bold"), url("#{$font-path}/fira/FiraSans-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Fira";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Fira Black"), local("FiraSans-Black"), url("#{$font-path}/fira/FiraSans-Black.ttf") format("ttf");
+}

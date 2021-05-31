@@ -82,7 +82,6 @@ export class CoreIonTabComponent extends Tab implements OnInit, OnDestroy {
                 // If the view we pushing in have same page's name and identical params, then we won't do anything.
                 // This is Ionic issue when user clicking too fast on old device or slow internet connection.
                 if (previousView.name === page && JSON.stringify(previousParam) === JSON.stringify(params)) {
-
                     return Promise.resolve();
                 }
             }

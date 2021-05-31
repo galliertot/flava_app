@@ -422,10 +422,7 @@ export class CoreLoginHelperProvider {
      * @return The string key.
      */
     getLogoutLabel(site?: CoreSite): string {
-        site = site || this.sitesProvider.getCurrentSite();
-        const config = site.getStoredConfig();
-
-        return 'core.mainmenu.' + (config && config.tool_mobile_forcelogout == '1' ? 'logout' : 'changesite');
+        return 'core.mainmenu.logout';
     }
 
     /**
@@ -1193,6 +1190,10 @@ export class CoreLoginHelperProvider {
                     }
 
                     this.isOpeningReconnect = true;
+                    /* rootNavCtrl.setRoot('CoreLoginCredentialsPage', {
+                        siteUrl: result.siteUrl,
+                        siteConfig: result.config
+                    }); */
 
                     rootNavCtrl.setRoot('CoreLoginReconnectPage', {
                         infoSiteUrl: info.siteurl,
@@ -1204,6 +1205,7 @@ export class CoreLoginHelperProvider {
                     }).finally(() => {
                         this.isOpeningReconnect = false;
                     });
+
                 }
             }
         }).catch((error) => {

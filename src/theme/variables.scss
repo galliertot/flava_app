@@ -23,12 +23,12 @@ $gray-light:      #e9e9e9; // Background.
 $gray-lighter:    #f5f5f5;
 $white:           #ffffff; // Background, reversed text.
 
-$blue:            #0064d2; // Link, background.
+$blue:            #00426A; // Link, background.
 $turquoise:       #007982; // Accent.
 $green:           #5e8100; // Accent.
 $red:             #cb3d4d;
-$orange:          #f98012; // Accent (never text).
-$yellow:          #fbad1a; // Accent (never text).
+$orange:          #F8B229; // Accent (never text).
+$yellow:          #FFD753; // Accent (never text).
 $purple:          #8e24aa; // Accent (never text).
 
 // Branded apps customization
@@ -58,16 +58,6 @@ $core-color-dark:     darken($core-color, 10%) !default;
 
 $core-course-image-background: #81ecec, #74b9ff, #a29bfe, #dfe6e9, #00b894, #0984e3, #b2bec3, #fdcb6e, #fd79a8, #6c5ce7 !default;
 
-// Shared Variables
-// --------------------------------------------------
-// To customize the look and feel of this app, you can override
-// the Sass variables found in Ionic's source scss files.
-// To view all the possible Ionic variables, see:
-// http://ionicframework.com/docs/theming/overriding-ionic-variables/
-
-$toolbar-background: $core-color !default;
-$content-padding: 10px;
-
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
@@ -79,7 +69,7 @@ $content-padding: 10px;
 $primary: $core-color !default;
 $secondary: $turquoise !default;
 $danger: $red !default;
-$light: $gray-lighter !default;
+$light: $white !default;
 $color-gray: $gray-dark !default;
 $dark: $black !default;
 $warning: $yellow !default;
@@ -131,15 +121,15 @@ $colors-dark: (
 
 $text-color:                 $black !default;
 $link-color:                 $blue !default;
-$background-color:           $gray-light !default;
+$background-color:           $white !default;
 $subdued-text-color:         $gray-darker !default;
 
 $list-background-color:      $white !default;
 
-$tabs-background:            $gray-darker !default;
-$tabs-border-color:          #b2b2b2 !default;
-$tabs-tab-color-active:      $core-color !default;
-$tabs-tab-color-inactive:    $white !default;
+$tabs-background:            $background-color !default;
+$tabs-border-color:          $core-color-light !default;
+$tabs-tab-color-active:      $orange !default;
+$tabs-tab-color-inactive:    $orange-light !default;
 $ion-tabs-badge-color:       $tabs-tab-color-active !default;
 
 $text-input-highlight-color-valid: $green !default;
@@ -169,6 +159,17 @@ $item-divider-color: $black !default;
 
 $core-star-color: $core-color !default;
 
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+$toolbar-background: $background-color !default;
+$content-padding: 10px;
+
 // Moodle Mobile variables
 // --------------------------------------------------
 
@@ -176,7 +177,7 @@ $core-star-color: $core-color !default;
 $core-color-init-screen:          #ffffff !default;
 $core-init-screen-spinner-color:  $core-color !default;
 
-$core-fixed-url:                  false !default;
+$core-fixed-url:                  true !default;
 
 $core-loading-spinner-color: $core-color !default;
 $core-spinner-color: $core-color !default;
@@ -224,7 +225,7 @@ $loading-md-spinner-color: $core-loading-spinner-color;
 $spinner-md-crescent-color: $core-spinner-color;
 $tabs-md-tab-color-inactive: $tabs-tab-color-inactive;
 $button-md-outline-background-color: $core-button-outline-background-color;
-$font-family-md-base: "Roboto", "Noto Sans", "Helvetica Neue", sans-serif !default;
+$font-family-md-base: "Roboto", "Noto Sans", "Fira", "Helvetica Neue", sans-serif !default;
 $select-md-placeholder-color: $core-select-color !default;
 $datetime-md-placeholder-color: $core-datetime-ios-placeholder-color !default;
 $label-md-text-color: $text-color !default;
@@ -299,7 +300,7 @@ $core-top-tabs-color-active: $core-color !default;
 $core-top-tabs-border-active: $core-top-tabs-color-active !default;
 
 $core-splitview-selected: $core-color-light !default;
-$core-progressbar-color: $core-color-light !default;
+$core-progressbar-color: $orange !default;
 
 $core-user-profile-communication-icons-color: $core-color !default;
 

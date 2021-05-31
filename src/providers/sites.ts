@@ -468,21 +468,6 @@ export class CoreSitesProvider {
     }
 
     /**
-     * Get the demo data for a certain "name" if it is a demo site.
-     *
-     * @param name Name of the site to check.
-     * @return Site data if it's a demo site, undefined otherwise.
-     */
-    getDemoSiteData(name: string): any {
-        const demoSites = CoreConfigConstants.demo_sites;
-        name = name.toLowerCase();
-
-        if (typeof demoSites != 'undefined' && typeof demoSites[name] != 'undefined') {
-            return demoSites[name];
-        }
-    }
-
-    /**
      * Check if a site is valid and if it has specifics settings for authentication (like force to log in using the browser).
      * It will test both protocols if the first one fails: http and https.
      *
@@ -1133,7 +1118,6 @@ export class CoreSitesProvider {
 
         return this.getSite(siteId).then((site) => {
             this.currentSite = site;
-
             if (site.isLoggedOut()) {
                 // Logged out, trigger session expired event and stop.
                 this.eventsProvider.trigger(CoreEventsProvider.SESSION_EXPIRED, {
@@ -1516,7 +1500,7 @@ export class CoreSitesProvider {
 
             this.currentSite = undefined;
 
-            if (siteConfig && siteConfig.tool_mobile_forcelogout == '1') {
+            if (siteConfig) {
                 promises.push(this.setSiteLoggedOut(siteId, true));
             }
 

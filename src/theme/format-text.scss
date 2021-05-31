@@ -1,10 +1,29 @@
 /** Styles to match web platform */
 ion-app.app-root core-format-text {
+  font-family: "Fira", sans-serif;
   ul {
     padding-left: 1rem;
   }
   ul, ol {
     -webkit-padding-start: 15px;
+  }
+}
+h1, h2, h3, h4, h5, p, input, a, button, div {
+  font-family: "Fira", sans-serif !important;
+  h1 {
+    font-weight: 800 !important;
+  }
+  h2 {
+    font-weight: 700 !important;
+  }
+  h3 {
+    font-weight: 600 !important;
+  }
+  h4 {
+    font-weight: 500 !important;
+  }
+  h5 {
+    font-weight: 300 !important;
   }
 }
 ion-app.app-root core-format-text,

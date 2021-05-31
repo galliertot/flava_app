@@ -42,6 +42,7 @@ ion-app.app-root {
   .core-big   { font-size: 115%; }
   .invisible { visibility: hidden; }
 
+
   .button-no-uppercase {
     text-transform: none;
   }
@@ -1322,4 +1323,23 @@ ion-app.app-root {
       display: none !important;
     }
   }
+}
+
+
+// Flava css
+
+.card-course {
+  border-radius: 16px !important;
+}
+.header-left {
+  .toolbar-title-ios {
+    text-align: left;
+  }
+  ion-title {
+    padding-left: 16px !important;
+  }
+}
+
+.header-ios .toolbar-background-ios {
+  border-color: $blue-light !important;
 }

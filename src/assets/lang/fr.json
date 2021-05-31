@@ -1839,6 +1839,7 @@
     "core.mainmenu.changesite": "Changer de plateforme",
     "core.mainmenu.help": "Aide",
     "core.mainmenu.logout": "Déconnexion",
+    "core.mainmenu.settings": "Paramètres",
     "core.mainmenu.website": "Site web",
     "core.maxfilesize": "Taille maximale des nouveaux fichiers : {{$a}}",
     "core.maxsizeandattachments": "Taille maximale des fichiers : {{$a.size}} ; nombre maximal de fichiers : {{$a.attachments}}",
