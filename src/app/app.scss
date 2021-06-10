@@ -1363,6 +1363,14 @@ ion-app.app-root {
   color: $black !important;
 }
 
+.core-login-forgotten-password a {
+  text-align: left !important;
+  text-decoration: none !important;
+  .item-inner {
+    background-color: transparent !important;
+  }
+}
+
 ion-select, .core-button-select {
   border-radius: 0 !important;
   box-shadow: none !important;
