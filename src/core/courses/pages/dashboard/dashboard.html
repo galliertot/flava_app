@@ -1,6 +1,11 @@
 <ion-header class="header-left">
     <ion-navbar core-back-button>
-        <img src="assets/icon/icon.png" margin-horizontal="16px" height="36px" width="36px" class="core-header-logo">
+        <ion-grid>
+            <ion-row class="header-title">
+                <img src="assets/icon/icon.png" margin-horizontal="16px" height="33px" width="33px" class="core-header-logo">
+                <h2>Flava by Le Point Jaune</h2>
+            </ion-row>
+        </ion-grid>
         <ion-buttons end>
             <button *ngIf="searchEnabled" ion-button icon-only (click)="openSearch()" [attr.aria-label]="'core.courses.searchcourses' | translate">
                 <ion-icon name="search"></ion-icon>

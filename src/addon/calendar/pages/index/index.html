@@ -1,6 +1,6 @@
 <ion-header class="header-left">
     <ion-navbar core-back-button>
-        <ion-title><h3>{{ (showCalendar ? 'addon.calendar.calendarevents' : 'addon.calendar.upcomingevents') | translate }}</h3></ion-title>
+        <ion-title>{{ (showCalendar ? 'addon.calendar.calendarevents' : 'addon.calendar.upcomingevents') | translate }}</ion-title>
         <ion-buttons end>
             <button ion-button icon-only (click)="openFilter($event)" [attr.aria-label]="'core.filter' | translate">
                 <ion-icon name="funnel" *ngIf="filter.filtered"></ion-icon>

@@ -1331,15 +1331,106 @@ ion-app.app-root {
 .card-course {
   border-radius: 16px !important;
 }
-.header-left {
-  .toolbar-title-ios {
-    text-align: left;
+
+.header-title {
+  align-items: center;
+  img {
+    margin-left: 8px !important;
   }
-  ion-title {
-    padding-left: 16px !important;
+  h2 {
+    font-size: 13px;
+    margin: 0 !important;
   }
+}
+.addon-block-recentlyaccessedcourses {
+  .core-horizontal-scroll { padding: 0 8px; }
+  ion-item-divider {
+    background-color: $background-color !important;
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+    height: fit-content !important;
+    h2 {
+      color: $blue !important;
+      text-align: center;
+      font-size: 15px;
+    }
+  }
+  .card-ios {
+    margin-top: 8px !important;
+  }
+}
+.core-button-select, .select-icon-inner {
+  color: $black !important;
+}
+
+ion-select, .core-button-select {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid $black !important;
+  padding: 2px !important;
+  margin: 0 3px !important;
+}
+.item-divider {
+  background-color: $gray-light !important;
+  color: $blue !important;
+  height: 36px !important;
+  margin: 0 0 6px 0 !important;
+}
+.about-flava {
+  display: flex;
+  margin-bottom: 32px;
+  margin-left: auto;
+  width: fit-content;
+  align-items: center;
+  h2 {
+    font-size: 12px;
+    margin: 0 !important;
+  }
+  button {
+    margin: 0 8px !important;
+    padding: 0 !important;
+    height: 36px !important;
+    width: 36px !important;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color;
+    border-radius: 8px;
+  }
+}
+.toolbar-title-ios {
+  color: $blue !important;
+}
+.addon-block-myoverview {
+  ion-item-divider {
+    background-color: $gray-light !important;
+    h2 {
+      color: $blue !important;
+      font-size: 15px;
+    }
+    button {
+      color: $blue !important;
+    }
+  }
+}
+
+.toolbar h2 {
+  color: $blue !important;
+}
+.toolbar-title {
+  color: $blue !important;
+  font-weight: 700 !important;
+}
+.toolbar ion-title {
+  padding: 0 70px !important;
+}
+.tabbar {
+  border-top: none !important;
 }
 
 .header-ios .toolbar-background-ios {
   border-color: $blue-light !important;
+}
+
+.list-ios > .item-block:last-child {
+  border-bottom: none !important;
 }

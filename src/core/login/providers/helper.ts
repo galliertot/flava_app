@@ -1190,12 +1190,12 @@ export class CoreLoginHelperProvider {
                     }
 
                     this.isOpeningReconnect = true;
-                    /* rootNavCtrl.setRoot('CoreLoginCredentialsPage', {
+                    rootNavCtrl.setRoot('CoreLoginCredentialsPage', {
                         siteUrl: result.siteUrl,
                         siteConfig: result.config
-                    }); */
+                    });
 
-                    rootNavCtrl.setRoot('CoreLoginReconnectPage', {
+                    /* rootNavCtrl.setRoot('CoreLoginReconnectPage', {
                         infoSiteUrl: info.siteurl,
                         siteUrl: result.siteUrl,
                         siteId: siteId,
@@ -1204,7 +1204,7 @@ export class CoreLoginHelperProvider {
                         siteConfig: result.config
                     }).finally(() => {
                         this.isOpeningReconnect = false;
-                    });
+                    }); */
 
                 }
             }
