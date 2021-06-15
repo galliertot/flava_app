@@ -311,6 +311,13 @@ export class CoreLoginCredentialsPage implements OnDestroy {
     }
 
     /**
+     * Go To Flava WebSite
+     */
+
+    goToFlavaWebSite(): void {
+        window.open("https://flava.lepointjaune.fr")
+    }
+    /**
      * Show instructions and scan QR code.
      */
     showInstructionsAndScanQR(): void {
